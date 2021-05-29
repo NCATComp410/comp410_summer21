@@ -3,10 +3,10 @@ import pandas as pd
 
 def show_aggie_pride():
     # https://pandas.pydata.org/docs/user_guide/index.html
-    df = pd.DataFrame(['Aggie Pride', 'Worldwide'])
+    df = pd.DataFrame(['Aggie Pride', 'Worldwide'], columns=['Text'])
 
-    print(df)
+    return df
 
 
 if __name__ == "__main__":
-    show_aggie_pride()
+    print(show_aggie_pride())

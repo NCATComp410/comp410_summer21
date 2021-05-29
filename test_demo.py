@@ -1,0 +1,15 @@
+import unittest
+from demo import show_aggie_pride
+
+
+# https://docs.python.org/3/library/unittest.html
+class MyTestCase(unittest.TestCase):
+    def test_show_aggie_pride(self):
+        df = show_aggie_pride()
+
+        self.assertEqual(df.loc[0, 'Text'], 'Aggie Pride')
+        self.assertEqual(df.loc[1, 'Text'], 'Worldwide')
+
+
+if __name__ == '__main__':
+    unittest.main()
