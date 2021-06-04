@@ -12,6 +12,8 @@ Using python to parse firewall logs
     * conda install jupyterlab
   * Install git (if you don't have it installed already)
     * https://git-scm.com/downloads
+  * Install GitHub desktop
+    * https://desktop.github.com
   * Fork this project and clone your fork 
     * cd to directory you want to put this in 
     * git clone (Your fork URL - Green clone button)
@@ -23,7 +25,7 @@ Using python to parse firewall logs
     * Runs a quick demo
   * Testing
     * conda install pytest-cov
-    * pytest --cov=id_pkg
+    * pytest
 ## Pull Request Requirements
 * All pull requests much attach output from pytest showing all test cases passed along with the coverage report or pull request will be rejected.
 
