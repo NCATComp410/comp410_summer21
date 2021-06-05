@@ -10,6 +10,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(df.loc[0, 'Text'], 'Aggie Pride')
         self.assertEqual(df.loc[1, 'Text'], 'Worldwide')
 
+        self.assertEqual(df.loc[2, 'Text'], 'Aggies DO!')
+
 
 if __name__ == '__main__':
     unittest.main()
