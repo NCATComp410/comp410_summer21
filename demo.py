@@ -3,7 +3,7 @@ import pandas as pd
 
 def show_aggie_pride():
     # https://pandas.pydata.org/docs/user_guide/index.html
-    df = pd.DataFrame(['Aggie Pride', 'Worldwide','Hard Work Yields Results'], columns=['Text'])
+    df = pd.DataFrame(['Aggie Pride', 'Worldwide', 'Giving Back Every Day, the Aggie Way'], columns=['Text'])
 
     return df
 
