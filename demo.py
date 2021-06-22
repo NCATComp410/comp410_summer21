@@ -6,7 +6,7 @@ def show_aggie_pride():
 
     df = pd.DataFrame(['Aggie Pride', 'Worldwide', 'Hard Work Yields Results',
                        'Work today for what you want to achieve tomorrow', 'Aggies DO!',
-                       'Giving Back Every Day, the Aggie Way', 'Aggies Rule'], columns=['Text'])
+                       'Giving Back Every Day, the Aggie Way', 'Aggies Rule','When One Door Closes Another One Opens'], columns=['Text'])
 
     return df
 
