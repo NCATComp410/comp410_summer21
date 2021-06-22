@@ -3,7 +3,10 @@ import pandas as pd
 
 def show_aggie_pride():
     # https://pandas.pydata.org/docs/user_guide/index.html
-    df = pd.DataFrame(['Aggie Pride', 'Worldwide','Hard Work Yields Results','When One Door Closes Another One Opens'], columns=['Text'])
+
+    df = pd.DataFrame(['Aggie Pride', 'Worldwide', 'Hard Work Yields Results',
+                       'Work today for what you want to achieve tomorrow', 'Aggies DO!',
+                       'Giving Back Every Day, the Aggie Way', 'Aggies Rule','When One Door Closes Another One Opens'], columns=['Text'])
 
     return df
 
