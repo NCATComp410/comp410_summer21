@@ -20,6 +20,11 @@ class LogParse:
         if id == 103004:
             (message, reason) = df.loc[id, 'Text'].split('Reason: ')
             df.loc[id, 'Reason'] = reason.rstrip()
+        elif id == 114001:
+            # %ASA-1-114001: Failed to initialize 4GE SSM I/O card (error error_string).
+            m = re.search(r'card \(error (\w+)\)', df.loc[id, 'Text'])
+            if m:
+                df.loc[id, 'Error'] = m.group(1)
 
         return df
 
