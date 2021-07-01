@@ -58,6 +58,7 @@
 %ASA-1-114001: Failed to initialize 4GE SSM I/O card (error error_string).
 %ASA-1-114002: Failed to initialize SFP in 4GE SSM I/O card (error error_string).
 %ASA-1-114003: Failed to run cached commands in 4GE SSM I/O card (error error_string).
+%ASA-3-114013: Failed to set mac address table in 4GE SSM I/O card (error error_string).
 %ASA-1-1199012: Stack smash during new_stack_call in process/fiber process/fiber, call target f, stack size s, process/fiber name of the process/fiber that caused the stack smash.
 %ASA-1-199010: Signal 11 caught in process/fiber(rtcli async executor process)/(rtcli async executor) at address 0xf132e03b, corrective action at 0xca1961a0
 %ASA-1-199013: syslog.
