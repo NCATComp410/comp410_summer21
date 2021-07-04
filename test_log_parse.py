@@ -52,6 +52,8 @@ class LogParseTest(unittest.TestCase):
                                                   'reason-string.')
         self.assertTrue(self.df.loc[103004, 'Reason'] == 'reason-string.')
 
+
+
     def test_ASA_1_114001(self):
         # %ASA-1-114001: Failed to initialize 4GE SSM I/O card (error error_string).
         print(self.df.loc[114001])
@@ -59,6 +61,16 @@ class LogParseTest(unittest.TestCase):
         self.assertTrue(self.df.loc[114001, 'Severity'] == 1)
         self.assertTrue(self.df.loc[114001, 'Text'] == 'Failed to initialize 4GE SSM I/O card (error error_string).')
         self.assertTrue(self.df.loc[114001, 'Error'] == 'error_string')
+
+    def test_ASA_3_114013(self):
+        # %ASA-3-114013: Failed to set mac address table in 4GE SSM I/O card (error error_string).
+        print(self.df.loc[114013])
+        self.assertTrue(self.df.loc[114013, 'Type'] == 'ASA')
+        self.assertTrue(self.df.loc[114013, 'Severity'] == 3)
+        self.assertTrue(self.df.loc[114013, 'Text'] == 'Failed to set mac address table in 4GE SSM I/O card (error '
+                                                       'error_string).')
+        self.assertTrue(self.df.loc[114013, 'Error'] == 'error_string')
+
 
 
 if __name__ == '__main__':
