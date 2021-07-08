@@ -61,6 +61,13 @@ class LogParseTest(unittest.TestCase):
         self.assertTrue(self.df.loc[114001, 'Severity'] == 1)
         self.assertTrue(self.df.loc[114001, 'Text'] == 'Failed to initialize 4GE SSM I/O card (error error_string).')
         self.assertTrue(self.df.loc[114001, 'Error'] == 'error_string')
+        
+    def test_ASA_3_114010(self):
+        # %ASA-3-114010: Failed to set multicast hardware address in 4GE SSM I/O card (error error_string).
+        self.assertTrue(self.df.loc[114010, 'Type'] == 'ASA')
+        self.assertTrue(self.df.loc[114010, 'Severity'] == 3)
+        self.assertTrue(self.df.loc[114010, 'Text'] == '(Primary) Failed to set multicast hardware address in 4GE SSM I/O card (error error_string)')
+        self.assertTrue(self.df.loc[114010, 'Error'] == 'error-string.') 
 
     def test_ASA_3_114013(self):
         # %ASA-3-114013: Failed to set mac address table in 4GE SSM I/O card (error error_string).
