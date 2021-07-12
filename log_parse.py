@@ -39,6 +39,50 @@ class LogParse:
 
         return df
 
+    def parse_asa_logfile(self, asa_lotfile):
+        """Parses an ASA logfile and returns everything in a dataframe"""
+
+        # Will read all the data into this dict and convert to a dataframe leter
+        data = {'Date': [],
+                'Host': [],
+                'Type': [],
+                'Severity': [],
+                'ID': [],
+                'Message': [],
+                'IP Address': []}
+
+        with open(asa_lotfile, encoding='utf-8') as f:
+            for line in f:
+                # Parse an ASA logfile - groups are split as follows
+                # 1 - timestamp
+                # 2 = host
+                # 3 = type
+                # 4 = severity
+                # 5 = message ID
+                # 6 = message
+                m = re.search(r'^(\w+ \d+ \d+ \d+:\d+:\d+) (\w+) : %(\w+)-(\d)-(\d+): (.+)', line)
+                if m:
+                    data['Date'].append(m.group(1))
+                    data['Host'].append(m.group(2))
+                    data['Type'].append(m.group(3))
+                    data['Severity'].append(m.group(4))
+                    data['ID'].append(m.group(5))
+                    data['Message'].append(m.group(6))
+
+                    # Check for an im address in the error message
+                    # this example will use all 10.b.c.d addresses since these
+                    # are classified as private addresses
+                    # https://en.wikipedia.org/wiki/Private_network
+                    m2 = re.search(r'\(error (\d+.\d+.\d+.\d+)\)', m.group(6))
+                    if m2:
+                        data['IP Address'].append(m2.group(1))
+
+        # Create the dataframe and convert timestamp
+        df = pd.DataFrame(data)
+        df['Date'] = pd.to_datetime(df['Date'])
+
+        return df
+
     def parse_syslog_file(self, syslog_file):
         """Returns a dataframe of parsed example syslogs"""
 
