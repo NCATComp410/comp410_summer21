@@ -66,7 +66,7 @@ class LogParseTest(unittest.TestCase):
         # %ASA-3-114010: Failed to set multicast hardware address in 4GE SSM I/O card (error error_string).
         self.assertTrue(self.df.loc[114010, 'Type'] == 'ASA')
         self.assertTrue(self.df.loc[114010, 'Severity'] == 3)
-        self.assertTrue(self.df.loc[114010, 'Text'] == '(Primary) Failed to set multicast hardware address in 4GE SSM I/O card (error error_string)')
+        self.assertTrue(self.df.loc[114010, 'Text'] == 'Failed to set multicast hardware address in 4GE SSM I/O card (error error_string).')
         self.assertTrue(self.df.loc[114010, 'Error'] == 'error-string.') 
 
     def test_ASA_3_114013(self):
