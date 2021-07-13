@@ -30,7 +30,11 @@ class LogParse:
             m = re.search(r'card \(error (\w+)\)', df.loc[id, 'Text'])
             if m:
                 df.loc[id, 'Error'] = m.group(1)        
-                
+        elif id == 114012:
+            # %ASA-3-114012: Failed to delete multicast hardware address in 4GE SSM I/O card (error error_string).
+            m = re.search(r'card \(error (\w+)\)', df.loc[id, 'Text'])
+            if m:
+                df.loc[id, 'Error'] = m.group(1)
         elif id == 114013:
             # %ASA-3-114013: Failed to set mac address table in 4GE SSM I/O card (error error_string).
             m = re.search(r'card \(error (\w+)\)', df.loc[id, 'Text'])
