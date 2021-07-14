@@ -53,48 +53,13 @@ class LogParseTest(unittest.TestCase):
         self.assertTrue(self.df.loc[103004, 'Reason'] == 'reason-string.')
 
 
-
-    def test_ASA_1_114001(self):
-        # %ASA-1-114001: Failed to initialize 4GE SSM I/O card (error error_string).
-        print(self.df.loc[114001])
-        self.assertTrue(self.df.loc[114001, 'Type'] == 'ASA')
-        self.assertTrue(self.df.loc[114001, 'Severity'] == 1)
-        self.assertTrue(self.df.loc[114001, 'Text'] == 'Failed to initialize 4GE SSM I/O card (error error_string).')
-        self.assertTrue(self.df.loc[114001, 'Error'] == 'error_string')
-
-    def test_ASA_3_114010(self):
-        # %ASA-3-114010: Failed to set multicast hardware address in 4GE SSM I/O card (error error_string).
-        self.assertTrue(self.df.loc[114010, 'Type'] == 'ASA')
-        self.assertTrue(self.df.loc[114010, 'Severity'] == 3)
-        self.assertTrue(self.df.loc[114010, 'Text'] == 'Failed to set multicast hardware address in 4GE SSM I/O card (error error_string).')
-        self.assertTrue(self.df.loc[114010, 'Error'] == 'error_string')
-
-    def test_ASA_3_114012(self):
-        # %ASA-3-114012: Failed to delete multicast hardware address in 4GE SSM I/O card (error error_string).
-        print(self.df.loc[114012])
-        self.assertTrue(self.df.loc[114012, 'Type'] == 'ASA')
-        self.assertTrue(self.df.loc[114012, 'Severity'] == 3)
-        self.assertTrue(self.df.loc[114012, 'Text'] == 'Failed to delete multicast hardware address in 4GE SSM I/O card'
-                                                       ' (error error_string).')
-        self.assertTrue(self.df.loc[114012, 'Error'] == 'error_string')
-
-
-    def test_ASA_3_114013(self):
-        # %ASA-3-114013: Failed to set mac address table in 4GE SSM I/O card (error error_string).
-        print(self.df.loc[114013])
-        self.assertTrue(self.df.loc[114013, 'Type'] == 'ASA')
-        self.assertTrue(self.df.loc[114013, 'Severity'] == 3)
-        self.assertTrue(self.df.loc[114013, 'Text'] == 'Failed to set mac address table in 4GE SSM I/O card (error '
-                                                       'error_string).')
-        self.assertTrue(self.df.loc[114013, 'Error'] == 'error_string')
-
-    def test_ASA_3_114017(self):
-         # %ASA-3-114017: Failed to get link status in 4GE SSM I/O card (error error_string).
-         print(self.df.loc[114017])
-         self.assertTrue(self.df.loc[114017, 'Type'] == 'ASA')
-         self.assertTrue(self.df.loc[114017, 'Severity'] == 3)
-         self.assertTrue(self.df.loc[114017, 'Text'] == 'Failed to get link status in 4GE SSM I/O card (error error_string).')
-         self.assertTrue(self.df.loc[114017, 'Error'] == 'error_string')
+    def test_ASA_3_114009(self):
+        # %ASA-3-114009: Failed to initialize 4GE SSM I/O card (error error_string).
+        print(self.df.loc[114009])
+        self.assertTrue(self.df.loc[114009, 'Type'] == 'ASA')
+        self.assertTrue(self.df.loc[114009, 'Severity'] == 1)
+        self.assertTrue(self.df.loc[114009, 'Text'] == 'Failed to initialize 4GE SSM I/O card (error error_string).')
+        self.assertTrue(self.df.loc[114009, 'Error'] == 'error_string')
 
 
 
