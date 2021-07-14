@@ -96,6 +96,14 @@ class LogParseTest(unittest.TestCase):
          self.assertTrue(self.df.loc[114017, 'Text'] == 'Failed to get link status in 4GE SSM I/O card (error error_string).')
          self.assertTrue(self.df.loc[114017, 'Error'] == 'error_string')
 
+    def test_ASA_3_114011(self):
+        # %ASA-3-114011: Failed to delete multicast address in 4GE SSM I/O card(error_string).
+         print(self.df.loc[114011])
+         self.assertTrue(self.df.loc[114011, 'Type'] == 'ASA')
+         self.assertTrue(self.df.loc[114011, 'Severity'] == 3)
+         self.assertTrue(self.df.loc[114011, 'Text'] == 'Failed to delete multicast address in 4GE SSM I/O card (error error_string).')
+         self.assertTrue(self.df.loc[114011, 'Error'] == 'error_string')
+
 
 
 if __name__ == '__main__':
