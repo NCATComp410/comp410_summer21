@@ -99,7 +99,7 @@ class LogParseTest(unittest.TestCase):
         print(self.df.loc[114009])
         self.assertTrue(self.df.loc[114009, 'Type'] == 'ASA')
         self.assertTrue(self.df.loc[114009, 'Severity'] == 3)
-        self.assertTrue(self.df.loc[114009, 'Text'] == 'Failed to initialize 4GE SSM I/O card (error error_string).')
+        self.assertTrue(self.df.loc[114009, 'Text'] == 'Failed to set multicast address in 4GE SSM I/O card (error error_string).')
         self.assertTrue(self.df.loc[114009, 'Error'] == 'error_string')
 
 
