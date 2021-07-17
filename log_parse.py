@@ -55,7 +55,11 @@ class LogParse:
             m = re.search(r'card \(error (\w+)\)', df.loc[id, 'Text'])
             if m:
                 df.loc[id, 'Error'] = m.group(1)
-
+        elif id == 114006:
+            # %ASA-3-114006: Failed to get port statistics in 4GE SSM I/O card (error error_string).
+            m = re.search(r'card \(error (\w+)\)', df.loc[id, 'Text'])
+            if m:
+                df.loc[id, 'Error'] = m.group(1)
         return df
 
     def parse_asa_logfile(self, asa_lotfile):

@@ -103,6 +103,16 @@ class LogParseTest(unittest.TestCase):
         self.assertTrue(self.df.loc[114009, 'Error'] == 'error_string')
 
 
+        def test_ASA_3_114006(self):
+            # %ASA-3-114006: Failed to initialize 4GE SSM I/O card (error error_string).
+            print(self.df.loc[114009])
+            self.assertTrue(self.df.loc[114006, 'Type'] == 'ASA')
+            self.assertTrue(self.df.loc[114006, 'Severity'] == 3)
+            self.assertTrue(self.df.loc[114006, 'Text'] == 'Failed to get port statistics in 4GE SSM I/O card (error error_string).')
+            self.assertTrue(self.df.loc[114006, 'Error'] == 'error_string')
+   
+
+
 
 if __name__ == '__main__':
     unittest.main()
