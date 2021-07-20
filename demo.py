@@ -9,7 +9,7 @@ def show_aggie_pride():
                        'Work today for what you want to achieve tomorrow', 'Aggies DO!',
                        'Giving Back Every Day, the Aggie Way', 'Aggies Rule', 
                        'When One Door Closes Another One Opens', 'Aggie Pride',
-                       'Aggies on fire'], columns=['Text'])
+                       'Aggies on fire', 'Aggies Do!'], columns=['Text'])
 
     return df
 
