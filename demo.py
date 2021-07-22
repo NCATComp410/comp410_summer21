@@ -35,12 +35,28 @@ def asa_parse():
     fig.savefig('plot.png')
 
 
+def team1_asa_parse():
+    # Parse the ASA logfile
+    parser = LogParse()
+    df = parser.parse_asa_logfile('dmz1_logs.txt')
+    dft1 = df[df['ID'].isin(['114017', '114013', '114012'])]
+    print(dft1.describe())
+
+    # Create a table by hour with the total count of messages seen
+    table = dft1.groupby([pd.Grouper(key='Date', freq='H')]).agg({'ID': 'count'})
+
+    # Create a simple plot and save as a png
+    fig = table.plot().get_figure()
+    fig.savefig('team1plot.png')
+
+
 if __name__ == "__main__":
     print(show_aggie_pride())
 
     print('\nCalling parse_logs()')
     parse_logs()
-
     # Uncomment when we start sprint-4
-    # print('\nCalling asa_parse()')
-    # asa_parse()
+    print('\nCalling asa_parse()')
+    asa_parse()
+    print('\nCalling team1_asa_parse')
+    team1_asa_parse()
