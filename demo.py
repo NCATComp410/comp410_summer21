@@ -75,3 +75,5 @@ if __name__ == "__main__":
     asa_parse()
     print('\nCalling team1_asa_parse')
     team1_asa_parse()
+    print('\nCalling team2_asa_parse')
+    team2_asa_parse()
