@@ -4,10 +4,10 @@ from log_parse import LogParse
 
 def show_aggie_pride():
     # https://pandas.pydata.org/docs/user_guide/index.html
-    
+
     df = pd.DataFrame(['Aggie Pride', 'Worldwide', 'Hard Work Yields Results',
                        'Work today for what you want to achieve tomorrow', 'Aggies DO!',
-                       'Giving Back Every Day, the Aggie Way', 'Aggies Rule', 
+                       'Giving Back Every Day, the Aggie Way', 'Aggies Rule',
                        'When One Door Closes Another One Opens', 'Aggie Pride',
                        'Aggies on fire', 'Aggies Do!'], columns=['Text'])
 
@@ -48,6 +48,21 @@ def team1_asa_parse():
     # Create a simple plot and save as a png
     fig = table.plot().get_figure()
     fig.savefig('team1plot.png')
+
+
+def team2_asa_parse():
+    # Parse the ASA logfile
+    parser = LogParse()
+    df = parser.parse_asa_logfile('dmz1_logs.txt')
+    dft2 = df[df['ID'].isin(['114011', '114007', '114015'])]
+    print(dft2.describe())
+
+    # Create a table by hour with the total count of messages seen
+    table = dft2.groupby([pd.Grouper(key='Date', freq='H')]).agg({'ID': 'count'})
+
+    # Create a simple plot and save as a png
+    fig = table.plot().get_figure()
+    fig.savefig('team2.png')
 
 
 if __name__ == "__main__":
